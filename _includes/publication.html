@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div id="{{ include.pub.slug }}" class="media">
+      <div class="media-left text-larger">
+        <span class="label label-primary">{{ include.pub.year }}</span>
+      </div>
+
+      <div class="media-body">
+        <h4 class="media-heading">{{ include.pub.title }}</h4>
+        <p>
+          <span class="pub-authors">{{ include.pub.authors }}</span>,
+          <span class="pub-in">{{ include.pub.in }}</span>
+        </p>
+        {% if include.pub.hal %}
+        <div class="text-right">
+          <a href="{{ include.pub.hal }}" class="btn btn-default btn-sm">
+            <i class="fa fa-external-link fa-lg"></i>&nbsp;
+            See on HAL
+          </a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <span class="pub-date">{{ include.pub.date }}</span>,
+    <span class="pub-location">{{ include.pub.location }}</span>
+  </div>
+</div>

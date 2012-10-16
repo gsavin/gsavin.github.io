@@ -1,0 +1,41 @@
+- title: Fenix
+  description: A platform for the monitoring and analysis of sensors data using the MQTT protocol.
+  icon: <img src="/img/fenix.png"/>
+  url: /projects/fenix/
+  exturl: https://www.github.com/gsavin/fenix
+
+- title: arduicioles
+  description: This is a half-scientist half-artistic project for "la Fête de la Science 2015", where we created artificial fireflies.
+  icon: <img src="/img/logo-abc.png"/>
+  url: /projects/arduicioles/
+  exturl: http://arduicioles.faironnerie-abc.xyz
+
+- title: GraphStream
+  description: A Java library for the modeling and analysis of dynamic graphs.
+  icon: <img src="/img/logo-gs.png"/>
+  url: /projects/graphstream/
+  exturl: http://graphstream-project.org
+
+- title: FIREDIAG
+  description: An <a href="http://www.agence-nationale-recherche.fr/">ANR</a> project aiming to use sensors data to help fighting building fires.
+  icon: <img src="/img/logo-firediag.png"/>
+  url: /projects/firediag/
+  exturl: http://firediag.litislab.fr
+
+- title: D3
+  description: A middleware dedicated to dynamic and decentralized distribution. Be aware that the website is really ugly.
+  icon: <img src="/img/logo-d3.png"/>
+  url: /projects/d3/
+  exturl: http://d3-project.org
+
+- title: nomadoGEEKS
+  description: My blog about my travels and pictures of wildlife and landscapes I took all around the world.
+  icon: <img src="/img/logo-nomadogeeks.png"/>
+  url: /projects/nomadogeeks/
+  exturl: http://nomadogeeks.com
+
+- title: GitHub
+  description: Various projects can be found on my GitHub account.
+  icon: <i class="fa fa-github"></i>
+  url: http://github.com/gsavin
+  exturl: http://github.com/gsavin

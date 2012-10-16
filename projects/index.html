@@ -1,0 +1,20 @@
+---
+title: Projects
+layout: single-section
+section-title: Projects
+nav-active: projects
+---
+
+<div class="row">
+{% assign p_id=0 %}
+{% for project in site.data.projects %}
+  {% if p_id == 2 %}
+    {% assign p_id=0 %}
+</div>
+<div class="row">
+  {% endif %}
+
+  {% include project.html project=project %}
+  {% assign p_id= p_id | plus:1 %}
+{% endfor %}
+</div>

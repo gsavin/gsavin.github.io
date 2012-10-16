@@ -1,0 +1,215 @@
+---
+title: ESPèce en voie de connection
+author: Guilhelm SAVIN
+description: Un atelier poursuivant la série "l'Âge de faire", organisé par la faironnerie ABC. Celui-ci aborde les ESP8266.
+theme: age_de_faire
+layout: revealjs
+---
+
+<section data-background="img/aplapo.svg" data-background-size="contain" data-background-position="right">
+  <div style="background-color:rgba(22,22,22,0.75); padding-top:15px; padding-bottom:15px;">
+    <h2>L'Âge de Faire</h2>
+    <h3>ESPèce en voie de connection</h3>
+    <p>
+      <small>organisée par <a href="http://www.faironnerie-abc.xyz">la Faironnerie ABC</a> /
+        <a href="https://twitter.com/faironnerie_abc">@faironnerie_abc</a>
+      </small>
+    </p>
+  </div>
+</section>
+
+<section>
+  <section>
+    <h3>Présentation de l'ESP8266</h3>
+  </section>
+
+  <section>
+    <h4>En quelques mots</h4>
+
+    <ul>
+      <li>Puce low-cost du fabriquant chinois Espressif</li>
+      <li>Puce WiFi incluant la pile TCP/IP</li>
+      <li>Processeur 32bits @ 80MHz</li>
+      <li>96ko de RAM</li>
+      <li>Tension de fonctionnement 3.3V</li>
+      <li>16 E/S numériques, 1 analogique, UART, I2C, SPI</li>
+    </ul>
+  </section>
+
+  <section>
+    <h4>Les différentes cartes</h4>
+    <img src="img/ESPFamily.png" width="auto" height="100%"/>
+  </section>
+
+  <section data-svg-hl="img/esp01.svg">
+    <h4>ESP-01</h4>
+  </section>
+
+  <section>
+    <h4>Utilisation</h4>
+
+    <p>Envoie de commandes AT via le port série</p>
+    <p>Programmation de la puce</p>
+  </section>
+</section>
+
+<section data-background="#efefef">
+  <section>
+    <h3>Préliminaires</h3>
+  </section>
+
+  <section data-svg-hl="img/esp01-pull.svg">
+    <h4>Résistances pull-up / pull-down</h4>
+  </section>
+
+  <section data-svg-hl="img/esp01-pont.svg">
+    <h4>Pont diviseur de tension</h4>
+  </section>
+
+  <section>
+    <h4>Montage de base</h4>
+    <ul>
+      <li><span class="tag bleu">Vcc</span> alimenté en <span class="tag">3.3V</span></li>
+      <li><span class="tag bleu">GND</span></li>
+      <li><span class="tag bleu">CH_PD</span> alimenté en <span class="tag">3.3V</span></li>
+      <li><span class="tag bleu">Rx</span> et <span class="tag bleu">Tx</span> connectés au câble UART</li>
+      <li><span class="tag bleu">RESET</span> à la masse pour redémarrer</li>
+    </ul>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h3>Commandes AT</h3>
+  </section>
+
+  <section>
+    <h4>Moniteur série</h4>
+    Communication avec l'ESP8266
+    <pre class="bash"><code style="padding: 15px;">platformio serialports monitor --baud 115200</code></pre>
+  </section>
+
+  <section>
+    <h4>Commandes</h4>
+    <p><span class="tag">AT+...</span> + retour à la ligne</p>
+
+    <small>
+      <table>
+        <tr><td><span class="tag bleu">AT+GMR</span></td><td>informations</td></tr>
+        <tr><td><span class="tag bleu">AT+CWMODE=?</span></td><td>mode (1:  client, 2 : point d'accès, 3 : les deux)</td></tr>
+        <tr><td><span class="tag bleu">AT+CWLAP</span></td><td>liste des réseaux</td></tr>
+        <tr><td><span class="tag bleu">AT+CWJPA="ssid","motdepasse"</span></td><td>connection à un réseau</td></tr>
+        <tr><td><span class="tag bleu">AT+CIFSR</span></td><td>adresse ip</td></tr>
+      </table>
+    </small>
+
+    <p><small><a href="https://github.com/espressif/ESP8266_AT/wiki/AT_Description">Liste des commandes AT pour l'ESP8266</a></small></p>
+  </section>
+
+  <section>
+    <h4>Accès à une page web</h4>
+
+    <small>
+      <table>
+        <tr><td><span class="tag bleu">AT+CIPMUX=1</span></td><td>connexion multiple ip</td></tr>
+        <tr><td><span class="tag bleu">AT+CIPSTART=4,"TCP","serveur",port</span></td><td>ouvrir une connexion</td></tr>
+        <tr><td><span class="tag bleu">AT+CIPSEND=4,18</span></td><td>envoie de la requête en spécifiant le nombre d'octets</td></tr>
+      </table>
+    </small>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h3>Programmation de l'ESP8266</h3>
+  </section>
+
+  <section>
+    <h4>Pré-requis</h4>
+    <span class="tag">GPIO 0</span> doit être connecté à la masse au démarrage de l'ESP-01.
+  </section>
+
+  <section>
+    <h4><a href="http://platformio.org/">Platformio</a></h4>
+    <p>Plateforme de développement orientée IoT.</p>
+    <div>
+      <small>
+        <p>Structure d'un projet :</p>
+        <ul style="font-family: monospace;">
+          <li>racine du projet
+            <ul>
+              <li>platformio.ini</li>
+              <li>src/
+                <ul>
+                  <li>main.cpp</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </small>
+    </div>
+  </section>
+
+  <section>
+    <h4>platformio.ini</h4>
+
+    <pre><code>
+      [env:agedefaire]
+      platform = espressif
+      framework = arduino
+      board = esp01
+    </code></pre>
+  </section>
+
+  <section>
+    <h4>main.cpp</h4>
+
+    <pre>
+      <code>
+#include &lt;mem.h&gt;
+#include &lt;ESP8266WiFi.h&gt;
+#include &lt;WiFiUdp.h&gt;
+
+void setup() {
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(SSID_WIFI, PASSWORD_WIFI);
+
+  while (WiFi.status() != WL_CONNECTED) {
+  	delay(250);
+  }
+}
+
+void loop() { /* ... */ }
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <pre>
+      <code>
+#include &lt;DHT.h&gt;
+
+#define DHTTYPE DHT11
+#define DHTPIN 2
+
+DHT dht(DHTPIN, DHTTYPE, 11);
+
+void setup() {
+  Serial.begin(115200);
+  dht.begin();
+
+  Serial.println("C'est parti !");
+}
+
+void loop() {
+  float t = dht.readTemperature();
+  float h = dht.readHumidity();
+  Serial.println("Température : "); Serial.println(t);
+  Serial.println("Humidité : "); Serial.println(h);
+  delay(2000);
+}
+      </code>
+    </pre>
+  </section>
+</section>

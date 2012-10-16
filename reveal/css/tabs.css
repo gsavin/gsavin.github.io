@@ -1,0 +1,51 @@
+.reveal .tabs {
+  text-align: left;
+  position: relative;
+}
+
+.reveal .tabs ul.nav {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  list-style: none;
+  list-style-type: none;
+  display:block;
+  height:45px;
+  margin-left: 5px;
+}
+
+.reveal .tabs ul.nav li {
+  float: left;
+  font-size:75%;
+}
+
+.reveal .tabs ul.nav li.tabs-title {
+  padding: 5px 15px;
+}
+
+.reveal .tabs ul.nav a {
+  display:block;
+  box-sizing: border-box;
+  height: 45px;
+  padding: 5px 15px;
+  color: inherit;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.reveal .tabs ul.nav a:hover {
+background-color: rgba(0,0,0,0.6);
+}
+
+.reveal .tabs ul.nav a.active,
+.reveal .tabs .panes .active {
+  background-color: rgba(0,0,0,0.4);
+}
+
+.reveal .panes > div {
+  display: none;
+  padding: 15px;
+  min-height:50px;
+}
+
+.reveal .tabs .panes > div.active {
+  display: block;
+}

@@ -1,0 +1,18 @@
+---
+title: Blog
+layout: single-section
+section-title: Blog
+nav-active: blog
+---
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <ul>
+      {% for post in site.posts %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

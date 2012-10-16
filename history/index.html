@@ -1,0 +1,9 @@
+---
+title: History
+layout: single-section
+section-title: History
+nav-active: history
+---
+{% for entry in site.data.history %}
+  {% include history-entry.html entry=entry %}
+{% endfor %}

@@ -1,0 +1,123 @@
+---
+title: Research
+layout: base
+nav-active: research
+---
+<div class="section-wrapper">
+  <section class="container">
+    <div class="section-title"><h2>Research</h2></div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="#phd">PhD Thesis</a></li>
+          <li><a href="#master">Master Thesis</a></li>
+          <li><a href="#publications">Publications</a></li>
+        </ul>
+      </div>
+      <div class="col-md-8">
+        <p>Here you can find informations about my research activity, starting with my PhD thesis.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="section-wrapper">
+  <section id="phd" class="container">
+    <div class="section-title"><h2>PhD Thesis</h2></div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h3>Abstract</h3>
+        <div class="pull-left" style="width:40%;padding:5px 15px 0px 0px;"><img class="img-responsive img-rounded" src="/img/ants_eating_fruit.jpg"/></div>
+        <p class="text-justify text-larger">
+          This work presents our contribution about the distribution of complex system simulations
+          in open distributed environments. We consider these environments as computational ecosystems, of whose
+          we describe properties and characteristics, wherein simulations will evolve, by their execution.
+          An interaction network models these simulations, that we represent as a dynamic graph. Considering the
+          different kinds of possible dynamics, we propose a global formalism that can be used to describe these
+          graphs, along with a software framework, GraphStream, allowing their manipulation and their study.</p>
+
+        <p class="text-justify text-larger">The dynamic graph is then the object of a study wherein we are looking for organisations,
+          following them through time, in order to minimise communications’s costs between
+          machines, and to balance the computation load. We bring an improvement aiming to reduce
+          results’s oscillations of AntCo 2 , which is algorithm using digital ants colonies to detect organisations,
+          through competition and collaboration mechanisms. Stability of these organisations
+          is determined by a dynamic and distributed heuristic to find centroid of graph.</p>
+
+        <p class="text-justify text-larger">We propose a middleware allowing a dynamic and decentralized distribution of simulations
+          in a computational ecosystem, by favouring organisations and respecting the load balancing.</p>
+
+        <div class="text-right" style="margin-bottom:15px;">
+          <a href="https://hal.archives-ouvertes.fr/tel-00932194" class="btn btn-default">
+            <i class="fa fa-external-link fa-lg"></i>&nbsp;
+            See on HAL
+          </a>
+          <a href="/research/gsavin-phd-thesis.pdf" class="btn btn-primary">
+            <i class="fa fa-book fa-lg"></i>&nbsp;
+            Get the manuscript (in french)
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-right">
+      <a href="#header">Back to top&nbsp;<i class="fa fa-level-up fa-lg"></i></a>
+    </div>
+  </section>
+</div>
+
+<div class="section-wrapper">
+  <section id="master" class="container">
+    <div class="section-title"><h2>Master Thesis</h2></div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h3>Abstract</h3>
+        <p class="text-justify text-larger">
+          There are many segmentation methods in image processing. These methods are
+          usually limited to a few image types. To our knowledge, there is no generic
+          method which is able to solve segmentation problem for any image. In this
+          master thesis, a segmentation method which uses a socials spiders colonies
+          system will be studied and improved. These spiders are able to collectively
+          weave silk structure. This master thesis aims to present an adaptation of
+          this method to the segmentation problem.</p>
+
+        <div class="text-right" style="margin-bottom:15px;">
+          <a href="/research/gsavin-master-thesis.pdf" class="btn btn-primary">
+            <i class="fa fa-book fa-lg"></i>&nbsp;
+            Get the manuscript (in french)
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-right">
+      <a href="#header">Back to top&nbsp;<i class="fa fa-level-up fa-lg"></i></a>
+    </div>
+  </section>
+</div>
+
+<div class="section-wrapper">
+  <section id="publications" class="container">
+    <div class="section-title"><h2>Publications<sup><a href="#note1">1</a></h2></div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+    {% for pub in site.data.publications %}
+      {% include publication.html pub=pub %}
+    {% endfor %}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <p id="note1">[&circ;1]&nbsp;<em>authors are sorted alphabetically</em></p>
+      </div>
+    </div>
+
+    <div class="text-right">
+      <a href="#header">Back to top&nbsp;<i class="fa fa-level-up fa-lg"></i></a>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,34 @@
+svg.nohl .hl-select {
+  opacity: 0;
+}
+
+svg .hl-select {
+  opacity: 0.15;
+  cursor: hand;
+  -webkit-transition: opacity 500ms;
+  transition: opacity 500ms;
+}
+
+svg .hideonhl.hidden {
+  opacity: 0.15;
+}
+
+svg .hl-select:hover {
+  opacity: 1;
+}
+
+svg .hl-select .hl {
+  opacity: 0;
+}
+
+svg .hl-select:hover .hl {
+  opacity: 1;
+}
+
+svg .hl {
+  opacity: 0;
+}
+
+svg .hl.hover {
+  opacity: 1;
+}

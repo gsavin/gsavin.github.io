@@ -3,13 +3,11 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Guilhelm Savin -- author -- @zer0chain
 
 # THANKS
 
-    <name>
-
 # TECHNOLOGY COLOPHON
 
-    HTML5, CSS3
-    jQuery, Modernizr
+    CSS3, HTML5
+    Apache Server Configs, jQuery, Modernizr, Normalize.css

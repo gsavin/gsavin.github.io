@@ -1,0 +1,57 @@
+- title: GraphStream Workshop
+  date: Septembre 2011
+  location: Vienne, Autriche
+  authors: Antoine Dutot, Yoann Pigné et Guilhelm Savin
+  in: Emergent Properties in Natural and Artificial Complex Systems (EPNACS) in European Conference on Complex System (ECCS) 2011
+  slug: GSEPNACS2011
+  year: 2011
+
+- title: "Centroids : a decentralized approach"
+  date: Septembre 2011
+  location: Vienne, Autriche
+  authors: Antoine Dutot, Damien Olivier et Guilhelm Savin
+  in: Emergent Properties in Natural and Artificial Complex Systems (EPNACS) in European Conference on Complex System (ECCS) 2011
+  slug: EPNACS2011
+  year: 2011
+  hal: "https://hal.archives-ouvertes.fr/hal-00742845"
+
+- title: Collaboration and Competition in Boids Simulations with Predation
+  date: Juillet 2010
+  location: Lisbonne, Portugal
+  authors: Antoine Dutot, Damien Olivier et Guilhelm Savin
+  in: Emergent Properties in Natural and Artificial Complex Systems (EPNACS) in European Conference on Complex System (ECCS) 2010
+  slug: EPNACS2010
+  year: 2010
+
+- title: Swarm Intelligence to Distribute Simulations in Computational Ecosystems
+  date: Mars 2010
+  location: Leicester, Angleterre
+  authors: Antoine Dutot, Damien Olivier et Guilhelm Savin
+  in: Swarm Intelligence Algorithms and Applications Symposium (SIAAS) in the Thirty Sixth Annual Convention of the Society for the Study of Artificial Intelligence and Simulation of Behaviour (AISB’10)
+  slug: AISB2010
+  year: 2010
+
+- title: Dagda, un intergiciel pour la distribution dynamique de simulations de système complexe
+  date: Novembre 2009
+  location: Avignon, France
+  authors: Guilhelm Savin
+  in: majecSTIC
+  slug: majecSTIC2009
+  year: 2009
+  hal: "https://hal.archives-ouvertes.fr/hal-00448387v1"
+
+- title: Dagda, a load-balanced middleware to distribute Complex Systems simulations
+  date: Juin 2009
+  location: Le Havre, France
+  authors: Antoine Dutot, Damien Olivier et Guilhelm Savin
+  in: 3rd International Conference on Complex Systems and Applications (ICCSA'09)
+  slug: ICCSA2009
+  year: 2009
+
+- title: Pyocyanic Bacillus Propagation Simulation
+  date: Octobre 2006
+  location: Toulouse, France
+  authors: Antoine Dutot, Pierre Magal, Damien Olivier et Guilhelm Savin
+  in: CoSSom workshop in European Simulation and Modeling conference (ESM)
+  slug: COSSOM2006
+  year: 2006

@@ -1,0 +1,87 @@
+- title: Fullstack Engineer
+  start: may. 2017
+  end: dec. 2017
+  location: Stuff (Fairfax Media), Auckland, New Zealand
+  description: |
+    As one of the two web developpers of a small agile team, I was in charge of replacing an old silverstripe backend with a new GraphQL-based one, that would be maintained in-house and that should be generic enough to be re-used for other projects. This backend was written for nodejs and we successfully re-used it for another new projet during my last month there.
+    <br />
+    On the other hand, I had to maintain and to add new features to the React/Redux front-end which was using the GraphQL backend. This also implied to turn the design coming from the UX designers of the team into a clean and responsive html/css.
+    <br />
+    We were using continuous integration for the whole process, through Bitbucket and Codeship. The product was deployed as a docker image into ECS with the help of CloudFormation.
+  icon: code
+
+- title: Loader Operator
+  start: sep. 2016
+  end: dec. 2016
+  location: Gilmac, New Norcia, Western Australia
+  description: An experience where I was challenging myself about adapting to a complete unusual environment where I had to deal with lot of pressure.
+  icon: globe
+
+- title: Research Engineer
+  start: mar. 2015
+  end: jul. 2016
+  location: LITIS, University of le Havre, France
+  description: Working on the <a href="/projects/firediag/">FIREDIAG</a> project to produce an interactive tools collecting data from building sensors and providing help to firemen while they are fighting fire. Also took part of creating and managing a new FabLab, <a href="https://faironnerie-abc.xyz" target="_blank">la Faironnerie ABC</a>, inside the university.
+  icon: flask
+
+- title: Globe Trotting
+  start: jan. 2014
+  end: jan. 2015
+  location: Asia, Oceania, North &amp; South America
+  description: "A world tour I have done with my wife. We made several jobs during this year : working on an eco-project in Nepal, teaching english in Cambodgia, working on a café and on a ranch in Australia. You can find more informations about our trip on our <a href='http://nomadogeeks.com'>nomadoGEEKS blog</a>."
+  icon: globe
+
+- title: Software Engineer
+  start: sep. 2008
+  end: sep. 2013
+  description: Concurrently with my PhD thesis work, I was working on GraphStream, a java library for studying dynamic graphs. This tool is born from merging coding work of several LITIS researchers, including me, and we successfully released a major first release in 2011. This tools is still actively used and on its way for a second release.
+  icon: code
+
+- title: PhD in Computer Science
+  start: sep. 2008
+  end: dec. 2013
+  location: LITIS, University of Le Havre, France
+  description: This is my PhD thesis about <em>Swarm Intelligence for Simulation Distribution in a Computational Ecosystem</em>. More informations about it can be found on <a href="/research/#phd">the dedicated section</a>.
+  icon: graduation-cap
+
+- title: Master 2 <em>Algorithmic &amp; Formal Methods</em>
+  start: sep. 2007
+  end: jun. 2008
+  location: LaBRI, University of Bordeaux I, France
+  description: This graduation ended by my Master Thesis about <em>2D/3D Segmentation using Multi-agents System</em>.
+  icon: graduation-cap
+
+- title: Total Petrochemical
+  start: jul. 2007
+  end: aug. 2007
+  location: Le Havre, France
+  description: Development of an Intranet website &amp; a tools for network monitoring.
+  icon: code
+
+- title: Master 1 in Computer Science
+  start: sep. 2006
+  end: jun. 2007
+  location: University of Le Havre, France
+  description:
+  icon: graduation-cap
+
+- title: LITIS
+  start: mar. 2006
+  end: jun. 2006
+  location: LITIS, University of le Havre, France
+  description: An internship I made at the end of my licence. It was about <a href="/research/#COSSOM2006">Pyocyanic Bacillus Propagation Simulation</a>.
+  icon: flask
+
+- title: Licence in Computer Science
+  start: sep. 2003
+  end: jun. 2006
+  location: University of Le Havre, France
+  description: The three first years at the University. First steps into the research world.
+  icon: graduation-cap
+  
+- title: Econocom Managed Services
+  start: jul. 2003
+  end: sep. 2003
+  location: Les Ulis, France
+  description: An internship about marketing and intranet website development.
+  icon: briefcase

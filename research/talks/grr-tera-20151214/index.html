@@ -1,0 +1,116 @@
+---
+title: Maintien d'un système d'information en milieu difficile
+author: Guilhelm Savin
+layout: revealjs
+theme: age_de_faire
+lang: fr
+---
+<section class="titlepage" data-background="img/back.png">
+  <h2>FIREDIAG</h2>
+  <div class="block">
+    <h3>Maintien d'un système d'information en milieu difficile</h3>
+    <p>
+      <small>Guilhelm Savin, <span class="light">LITIS</span></small>
+    </p>
+  </div>
+  <p style="text-align:right;">
+    <img src="img/litis.png" height="50px"/>
+    <img src="img/logo_normandie.jpg" height="50px"/>
+    <img src="img/LogoMRT.png" height="50px"/>
+  </p>
+</section>
+<!--
+  Introduction :
+  -> Contexte
+  -> Données
+  -> Problématique
+  
+  Architecture :
+  -> Collecte de la donnée
+  -> Traitement
+  -> Diffusion
+  
+  Conclusion & Questions
+-->
+<section>
+  
+  <section>
+    <h3>Problématique générale</h3>
+    
+    <p><span class="tag">produire de l'information</span><p>
+    <table>
+      <tr class="fragment"><td style="text-align:right;"><span class="tag bleu">Qui ?</span></td><td>Les sapeurs pompiers</td></tr>
+      <tr class="fragment"><td style="text-align:right;"><span class="tag bleu">Quoi ?</span></td><td>Aide à la décision</td></tr>
+      <tr class="fragment"><td style="text-align:right;"><span class="tag bleu">Comment ?</span></td><td>Système multi-capteurs</td></tr>
+    </table>
+  </section>
+  
+  <section>
+    <h3>Système multi-capteurs</h3>
+    
+    <p><span class="tag">Différentes sources</span> : bâtiment, forces d'intervention</p>
+    <div class="block fragment"><p class="light">Exploitation des données :</p>
+      <table>
+        <tr><td style="text-align:right;"><span class="tag bleu">Veille</span></td><td>surveillance du bâtiment</td></tr>
+        <tr><td style="text-align:right;"><span class="tag bleu">Intervention</span></td><td>aide à la décision</td></tr>
+      </table>
+    </div>
+  </section>
+  
+  <section>
+    <h3>Capteurs &amp; Données</h3>
+    
+    <p style="text-align:center;">
+      <span class="fragment tag bleu"><i class="fa fa-compass"></i>&nbsp;Localisation</span><br></br>
+      <span class="fragment tag bleu"><i class="fa fa-feed"></i>&nbsp;Transmission | Latence</span><br></br>
+      <span class="fragment tag bleu"><i class="fa fa-database"></i>&nbsp;Validité | Quantité</span><br></br>
+    </p>
+  </section>
+</section>
+
+<section>
+  
+  <section>
+    <h2>Architecture</h2>
+    <p><span class="thin">Décomposée en trois parties :</span>
+      <ol>
+        <li>collecte</li>
+        <li>traitement</li>
+        <li>diffusion</li>
+      </ol>
+    </p>
+  </section>
+  
+  <section>
+    <h3>Collecte</h3>
+    
+    <ul>
+      <li>Création d'un réseau de capteurs</li>
+      <li>Stockage dans une base de données</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h3>Traitement</h3>
+    
+    <ul>
+      <li>Calcul d'informations en continue</li>
+      <li>Les utilisateurs influencent le type de calcul</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h3>Diffusion</h3>
+    
+    <ul>
+      <li>Établissement d'une connection entre l'utilisateur et le serveur</li>
+      <li>Activation d'un profile d'intervention</li>
+      <li>Réception des informations en continue</li>
+    </ul>
+  </section>
+</section>
+
+<section>
+  <h1>Merci</h1>
+  <h3>Questions ?</h3>
+</section>

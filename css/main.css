@@ -1,6 +1,6 @@
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+
 /*
- * HTML5 Boilerplate
- *
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
@@ -10,22 +10,17 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-html,
-button,
-input,
-select,
-textarea {
+html {
     color: #222;
-}
-
-body {
     font-size: 1em;
     line-height: 1.4;
 }
 
 /*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection declarations have to be separate.
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
 
@@ -53,10 +48,17 @@ hr {
 }
 
 /*
- * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
  */
 
-img {
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
     vertical-align: middle;
 }
 
@@ -79,10 +81,10 @@ textarea {
 }
 
 /* ==========================================================================
-   Chrome Frame prompt
+   Browser Upgrade Prompt
    ========================================================================== */
 
-.chromeframe {
+.browserupgrade {
     margin: 0.2em 0;
     background: #ccc;
     color: #000;
@@ -93,56 +95,138 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+body {
+  padding-top: 50px;
+  font-family: 'NoticiaText';
+  background-color: #efefef;
+}
 
+#main-container header {
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  
+  text-align: center;
 
+  min-height: 350px;
+}
 
+#main-container header h1 {
+  text-align: center;
+  margin-top: 130px;
+  font-size: 50px;
+  color: #efefef;
+  padding: 20px;
+  background-color: rgba(22, 22, 22, 0.7);
+  display:inline-block;
+}
 
+#main-container footer {
+  text-align: center;
+  padding: 10px 5px;
+  color: #999;
+}
 
+.section-wrapper {
+  padding-top: 20px;
+}
 
+.section-wrapper:nth-child(even),
+.section-wrapper:nth-child(even) .section-title h2 {
+  background-color: #efefef;
+}
 
+.section-wrapper:nth-child(odd),
+.section-wrapper:nth-child(odd) .section-title h2 {
+  background-color: #fcfcff;
+}
 
+section {
+  min-height: 100px;
+  position: relative;
+  padding-bottom: 50px;
+}
 
+section .section-title {
+  text-align: center;
+  margin-top: -50px;
+  margin-bottom: 50px;
+}
 
+section .section-title h2 {
+  background-color: inherit;
+  border: 1px solid #bfbfbf;
+  border-bottom: none;
+  padding: .5em 1em .5em 1em;
+  text-transform: uppercase;
+  display: inline-block;
+  letter-spacing: 0.1em;
+}
 
+.learnmore {
+  text-align:right;
+  margin-top: 20px;
+}
 
+.project-icon {
+  padding: 5px 15px 5px 5px;
+  width: 128px;
+}
 
+.project-icon img {
+  width: 100%;
+}
 
+.project-icon i {
+  font-size: 120px;
+}
 
+.projects .panel-body {
+  min-height: 200px;
+}
+
+.welcome p {
+  font-style: italic;
+  margin-top: 15px;
+  text-align: justify;
+}
+
+.welcome p::first-letter {
+  font-size: 200%;
+  padding-left: 10px;
+  line-height: 100%;
+}
+
+.text-larger {
+  font-size: 120%;
+}
+
+.pub-in {
+  font-style: italic;
+}
+
+.post img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
 /* ==========================================================================
    Helper classes
    ========================================================================== */
 
 /*
- * Image replacement
- */
-
-.ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    /* IE 6/7 fallback */
-    *text-indent: -9999px;
-}
-
-.ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 100%;
-}
-
-/*
- * Hide from both screenreaders and browsers: h5bp.com/u
+ * Hide visually and from screen readers:
  */
 
 .hidden {
     display: none !important;
-    visibility: hidden;
 }
 
 /*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
 
 .visuallyhidden {
@@ -157,8 +241,9 @@ textarea {
 }
 
 /*
- * Extends the .visuallyhidden class to allow the element to be focusable
- * when navigated to via the keyboard: h5bp.com/p
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
  */
 
 .visuallyhidden.focusable:active,
@@ -172,7 +257,7 @@ textarea {
 }
 
 /*
- * Hide visually and from screenreaders, but maintain layout
+ * Hide visually and from screen readers, but maintain layout
  */
 
 .invisible {
@@ -201,18 +286,9 @@ textarea {
     clear: both;
 }
 
-/*
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-
-.clearfix {
-    *zoom: 1;
-}
-
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
-   Theses examples override the primary ('mobile first') styles.
+   These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
 
@@ -220,21 +296,27 @@ textarea {
     /* Style adjustments for viewports that meet the condition */
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-       only screen and (min-resolution: 144dpi) {
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
 
 /* ==========================================================================
    Print styles.
-   Inlined to avoid required HTTP connection: h5bp.com/r
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 
 @media print {
-    * {
+    *,
+    *:before,
+    *:after {
         background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow:none !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
         text-shadow: none !important;
     }
 
@@ -252,12 +334,12 @@ textarea {
     }
 
     /*
-     * Don't show links for images, or javascript/internal links
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
      */
 
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
         content: "";
     }
 
@@ -267,8 +349,13 @@ textarea {
         page-break-inside: avoid;
     }
 
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
     thead {
-        display: table-header-group; /* h5bp.com/t */
+        display: table-header-group;
     }
 
     tr,
@@ -278,10 +365,6 @@ textarea {
 
     img {
         max-width: 100% !important;
-    }
-
-    @page {
-        margin: 0.5cm;
     }
 
     p,
@@ -295,88 +378,4 @@ textarea {
     h3 {
         page-break-after: avoid;
     }
-}
-
-/* From Bootstrap */
-.label,
-.badge {
-  font-size: 11.844px;
-  font-weight: bold;
-  line-height: 14px;
-  color: #ffffff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
-  white-space: nowrap;
-  vertical-align: baseline;
-  background-color: #999999;
-}
-
-.label {
-  padding: 1px 4px 2px;
-  -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
-}
-
-.badge {
-  padding: 1px 9px 2px;
-  -webkit-border-radius: 9px;
-     -moz-border-radius: 9px;
-          border-radius: 9px;
-}
-
-a.label:hover,
-a.badge:hover {
-  color: #ffffff;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.label-important,
-.badge-important {
-  background-color: #b94a48;
-}
-
-.label-important[href],
-.badge-important[href] {
-  background-color: #953b39;
-}
-
-.label-warning,
-.badge-warning {
-  background-color: #f89406;
-}
-
-.label-warning[href],
-.badge-warning[href] {
-  background-color: #c67605;
-}
-
-.label-success,
-.badge-success {
-  background-color: #468847;
-}
-
-.label-success[href],
-.badge-success[href] {
-  background-color: #356635;
-}
-
-.label-info,
-.badge-info {
-  background-color: #3a87ad;
-}
-
-.label-info[href],
-.badge-info[href] {
-  background-color: #2d6987;
-}
-
-.label-inverse,
-.badge-inverse {
-  background-color: #333333;
-}
-
-.label-inverse[href],
-.badge-inverse[href] {
-  background-color: #1a1a1a;
 }

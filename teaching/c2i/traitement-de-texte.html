@@ -1,0 +1,439 @@
+---
+title: C2i - Traitement de texte
+description: Support de cours pour le C2i
+author: Guilhelm Savin
+lang: fr
+layout: revealjs
+---
+<section class="title">
+	<img class="logo" src="img/c2i.svg" height="200px" width="auto"/>
+	<h3>Traitement de texte</h3>
+
+	<ul class="toc">
+		<li><a href="#/1">Introduction</a></li>
+		<li><a href="#/2">Meta-données</a></li>
+		<li><a href="#/3">Contenu</a></li>
+		<li><a href="#/4">Style</a></li>
+		<li><a href="#/5">Typographie</a></li>
+	</ul>
+</section>
+
+<section id="sec-introduction">
+	<section>
+		<h3>Introduction</h3>
+		<p><em>Concept introduit chez IBM en 1964.</em></p>
+		<p>Permet la rédaction et la mise en forme d'un document.</p>
+		<div class="fragment">
+			<p>On distingue différents types de traitement de texte:</p>
+			<ul>
+				<li>l'éditeur de texte</li>
+				<li>le traitement de texte interactif (type WYSIWYG*)</li>
+				<li>compilateur de texte (LaTeX)</li>
+			</ul>
+			<div class="footnote">What You See Is What You Get</div>
+		</div>
+	</section>
+
+	<section>
+		<h4>Éditeur de texte</h4>
+		<p>Permet l'édition brute d'un fichier texte. Le fichier contiendra uniquement les caractères insérés, sans information de mise en page.</p>
+		<div class="footnote">Exemples : nano, vi, emacs, gedit, notepad, etc.</div>
+	</section>
+
+	<section>
+		<h4>Traitement de texte</h4>
+		<p>Le fond et la forme sont mélangés, et édités directement par l'utilisateur. L'édition du contenu et de la mise en forme est <em>interactive</em>.
+		Le fichier contiendra alors les informations sur la mise en page en complément du contenu du document.</p>
+		<div class="footnote">Exemples : les différentes suites offices, Scribus, etc.</div>
+	</section>
+
+	<section>
+		<h4>Compilateur de texte</h4>
+		<p>On sépare le fond de la forme. Le document est alors rédigé tel un programme informatique qui sera compilé dans le format souhaité (PDF par exemple).</p>
+		<div class="footnote">Exemples : TeX, LaTeX, et leurs dérivés.</div>
+	</section>
+
+	<section>
+		<h3>Format</h3>
+		<p>Nécessité d'organiser les données du fichier pour inclure les différents composants (fond et forme).</p>
+		<div class="block">Problème d'interopérabilité entre les différents formats.</div>
+	</section>
+
+	<section>
+		<h4>Open Document</h4>
+		<p>Introduction par le consortium <a href="https://en.wikipedia.org/wiki/OASIS_(organization)">OASIS</a> d'un standard ouvert pour la représentation de document texte, feuille de calcul, et présentation.</p>
+		<p>Format XML basé sur le format d'OpenOffice.org XML.</p>
+		<div class="block">Désormais supporté par de <a href="https://en.wikipedia.org/wiki/OpenDocument_software">nombreux logiciels de traitement de texte</a>.</div>
+	</section>
+
+	<section>
+		<h4>Les composants d'un document ODT</h4>
+		<ul>
+			<li>Les méta-données</li>
+			<li>Le contenu</li>
+			<li>Le style</li>
+		</ul>
+	</section>
+	<section>
+		<h4>Voir les différents composants</h4>
+		<p>Tout ça dans un seul fichier ?</p>
+		<div class="fragment">
+			<p>Oui, une archive zippée.</p>
+			<pre>
+$ unzip -l mon_document.odt
+
+Archive:  mon_document.odt
+Length      Date    Time    Name
+---------  ---------- -----   ----
+ 39  2015-10-21 12:56   mimetype
+360  2015-10-21 12:56   Thumbnails/thumbnail.png
+3222  2015-10-21 12:56   content.xml
+10315  2015-10-21 12:56   settings.xml
+973  2015-10-21 12:56   meta.xml
+14407  2015-10-21 12:56   styles.xml
+899  2015-10-21 12:56   manifest.rdf
+  0  2015-10-21 12:56   Configurations2/
+1086  2015-10-21 12:56   META-INF/manifest.xml
+---------                     -------
+31301                     17 files
+			</pre>
+		</div>
+	</section>
+</section>
+
+<!--
+		META-DONNÉES
+	-->
+<section data-background="#4f71d5" id="sec-metadonnees">
+	<section>
+		<h3>Méta-données</h3>
+		<em>Ce que vous avez à dire sur ce que vous avez à dire.</em>
+	</section>
+	<section>
+		<p>Différentes méta-données :</p>
+		<ul>
+			<li>Titre</li>
+			<li>Auteur(e)(s)</li>
+			<li>Description</li>
+			<li>Date de création</li>
+			<li>...</li>
+		</ul>
+	</section>
+
+	<section>
+		<h4>Accès aux méta-données</h4>
+
+		<div>
+			<ol class="breadcrumb">
+				<li><a><i class="fa fa-keyboard-o"></i>&nbsp;Fichier</a></li>
+				<li><a>Propriétés</a></li>
+			</ol>
+		</div>
+		<img src="img/meta-donnees.jpg" />
+	</section>
+
+	<section>
+		<h4>Nom de l'auteur</h4>
+
+		<div>
+			<ol class="breadcrumb">
+				<li><a><i class="fa fa-keyboard-o"></i>&nbsp;Outils</a></li>
+				<li><a>Options</a></li>
+				<li><a>Données d'identité</a></li>
+			</ol>
+		</div>
+
+		<p>Sans oublier de cocher "<em>Utiliser les données dans les propriétés du document</em>"</p>
+	</section>
+</section>
+
+<!--
+		CONTENU
+	-->
+<section data-background="#b5533c" id="sec-contenu">
+	<section>
+		<h3>Contenu</h3>
+		<em>Ce que vous avez à dire.</em>
+	</section>
+
+	<section>
+		<h4>Structure</h4>
+
+		<p>Séparation de votre document en partie et sous-parties.</p>
+
+		<div class="titre">
+			Titre 1
+			<div class="titre">
+				Titre 2
+				<div class="titre">Titre 3</div>
+				<div class="titre">Titre 3</div>
+			</div>
+			<div class="titre">Titre 2</div>
+			<div class="titre">Titre 2</div>
+		</div>
+		<div class="titre">Titre 1</div>
+	</section>
+
+	<section>
+		<h4>Structure</h4>
+		<p><em>Le document devient une succession de blocs, chacun pouvant contenir des sous-blocs.</em></p>
+		<p>Principaux types de blocs :</p>
+		<ul>
+			<li>Titre (1, 2, 3, ...)</li>
+			<li>Corps de texte</li>
+			<li>Liste</li>
+			<li>En-tête</li>
+			<li>Pied de page</li>
+		</ul>
+	</section>
+
+	<section>
+		<h4>Définir le type d'un paragraphe</h4>
+		<img src="img/selection-type-bloc.jpg" />
+	</section>
+
+	<section>
+		<h3>Contenu d'une page</h3>
+		<div style="height: 75px;  margin-bottom: 10px; background-color: rgba(0,0,0,0.3);">en-tête</div>
+		<div style="height: 200px; margin-bottom: 10px; background-color: rgba(0,0,0,0.5);">contenu</div>
+		<div style="height: 75px;  margin-bottom: 10px; background-color: rgba(0,0,0,0.3);">pied de page</div>
+	</section>
+
+	<section>
+		<h3>Marges</h3>
+
+		<div>
+			<ul class="breadcrumb">
+				<li><a><i class="fa fa-keyboard-o"></i>&nbsp;Format</a></li>
+				<li><a>Page...</a></li>
+				<li><a>Page</a></li>
+			</ul>
+		</div>
+
+		<div style="border-top: 30px rgba(0,0,0,0.5) solid; border-bottom: 30px rgba(0,0,0,0.5) solid; padding: 15px 0px;">
+			<div style="border-left: 30px rgba(0,0,0,0.25) solid; border-right:30px rgba(0,0,0,0.25) solid; padding: 0px 15px;">
+				Définit l'espace entre la bordure de la page et le texte. Il y a donc quatre marges : en haut, en bas, à gauche et à droite.
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h4>Champs</h4>
+
+		<div>
+			<ul class="breadcrumb">
+				<li><a><i class="fa fa-keyboard-o"></i>&nbsp;Insertion</a></li>
+				<li><a>Champs</a></li>
+			</ul>
+		</div>
+
+		<p><em>Contenu faisant référence à un autre, éventuellement dynamique.</em></p>
+		<ul>
+			<li>Titre du document</li>
+			<li>Numéro de la page courante</li>
+			<li>...</li>
+		</ul>
+
+		<div class="footnote">Le champs sera inséré à la position du curseur.</div>
+	</section>
+
+	<section>
+		<h4>Table des matières</h4>
+
+		<div>
+			<ul class="breadcrumb">
+				<li><a><i class="fa fa-keyboard-o"></i>&nbsp;Insertion</a></li>
+				<li><a>Index et tables</a></li>
+				<li><a>Index et tables...</a></li>
+			</ul>
+		</div>
+
+		<p><em>Permet de générer une table des matières se mettant à jour dynamiquement et prenant en compte les blocs marqués comme </em>titre.</p>
+		<div class="footnote">La table des matières sera insérée à la position du curseur.</div>
+	</section>
+
+	<section>
+		<h4>Images</h4>
+		<div>
+			<ul class="breadcrumb">
+				<li><a><i class="fa fa-keyboard-o"></i>&nbsp;Insertion</a></li>
+				<li><a>Image</a></li>
+			</ul>
+		</div>
+
+		<div class="tabs">
+			<ul class="nav">
+				<li class="tabs-title">Propriétés :</li>
+				<li><a href="#" data-target="tab-img-size" class="active" >Taille</a></li>
+				<li><a href="#" data-target="tab-img-anchor">Ancrage</a></li>
+				<li><a href="#" data-target="tab-img-adapt">Adaptation</a></li>
+			</ul>
+
+			<div class="panes">
+				<div id="tab-img-size" class="active">
+					<p>Dimension de l'image, largeur et hauteur.</p>
+					<p><em>Conserver le ratio</em> maintient le rapport entre hauteur et largeur afin de ne pas déformer l'image.</p>
+				</div>
+				<div id="tab-img-anchor">
+					<p>Comment se positionne l'image :</p>
+					<ul>
+						<li>par rapport à la page</li>
+						<li>par rapport à un paragraphe</li>
+						<li>par rapport à un caractère</li>
+						<li>l'image se comporte comme un caractère</li>
+					</ul>
+				</div>
+				<div id="tab-img-adapt">
+					<p>Comment le texte s'écoule autour de l'image :</p>
+					<ul class="smaller">
+						<li><em>Aucun</em>, le texte s'arrête avant l'image et reprend ensuite</li>
+						<li><em>Avant</em>, le texte apparait seulement à gauche de l'image</li>
+						<li><em>Après</em>, le texte apparait seulement à droite de l'image</li>
+						<li><em>Parallèle</em>, le texte apparait des deux côtés de l'image</li>
+						<li><em>Continu</em>, l'image se place au dessus du texte</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="footnote">L'image sera insérée à la position du curseur.</div>
+	</section>
+
+	<section>
+		<h4>En-tête et pied de page</h4>
+
+		<div>
+			<ul class="breadcrumb">
+				<li><a><i class="fa fa-keyboard-o"></i>&nbsp;Insertion</a></li>
+				<li><a>En-tête</a></li>
+				<li><a>Style par défaut</a></li>
+			</ul>
+		</div>
+
+		<p>Possibilité de séparer les en-têtes et pieds de page gauche / droite (cf. <a href="#/4/4">style de page</a>).</p>
+	</section>
+</section>
+
+<!--
+   STYLE
+ -->
+<section data-background="#4d7e65" id="sec-style">
+	<section>
+		<h3>Style</h3>
+		<p><em>Après le fond, la forme...</em></p>
+	</section>
+
+	<section>
+		<h4>Hiérarchie de styles</h4>
+		<p>À chaque type de bloc est associé un style, c'est à dire un ensemble de règles définissant la forme du texte (taille, font, couleur, etc.).</p>
+		<p class="fragment">Il est possible, à partir d'un style, de créer un nouveau style enfant qui aura comme base les mêmes règles que son père.</p>
+	</section>
+
+	<section>
+		<h4>Fontes et polices</h4>
+		<p>Caractérisques des caractères :</p>
+		<ul>
+			<li><span style="width:6em;display:inline-block;">corps</span> <span style="font-size:100%">a</span>&nbsp;<span style="font-size:75%">a</span>&nbsp;<span style="font-size:50%">a</span></li>
+			<li><span style="width:6em;display:inline-block;">graisse</span> <span style="font-weight:300">a</span>&nbsp;<span style="font-weight:600">a</span>&nbsp;<span style="font-weight:normal;font-family:'Exo 2 Black'">a</span></li>
+			<li><span style="width:6em;display:inline-block;">style</span> <span style="font-style: normal;">a</span>&nbsp;<span style="font-style: italic;">a</span></li>
+		</ul>
+	</section>
+
+	<section>
+		<h4>Fontes et polices</h4>
+		<div><strong>Fonte : </strong> représentation des caractères pour un corps, une graisse et un style défini.</div>
+		<hr/>
+		<div><strong>Police :</strong> ensemble de fontes d'une même famille pour différents jeux de caractéristiques.</div>
+	</section>
+	<section>
+		<h4>Accès aux différents styles</h4>
+
+		<div>
+			<ul class="breadcrumb">
+				<li><a><i class="fa fa-keyboard-o"></i>&nbsp;Format</a></li>
+				<li><a>Styles et formatage</a></li>
+			</ul>
+		</div>
+
+		<p>Différentes catégories :</p>
+
+		<div class="tabs">
+			<ul class="nav">
+				<li class="tabs-title">Styles de </li>
+				<li><a data-target="tab-style-par" class="active">paragraphe</a></li>
+				<li><a data-target="tab-style-car">caractère</a></li>
+				<li><a data-target="tab-style-pag">page</a></li>
+				<li><a data-target="tab-style-lis">liste</a></li>
+			</ul>
+
+			<div class="panes">
+				<div id="tab-style-par" class="active">
+					La mise en forme des paragraphes, ainsi que celle des titres.
+				</div>
+
+				<div id="tab-style-car">
+					La mise en forme propre à une portion de paragraphe, par exemple celle des liens internets.
+				</div>
+
+				<div id="tab-style-pag">
+					Mise en forme de la page en général, en particulier l'en-tête et le pied de page.
+					Possibilité de séparer la mise en forme page gauche / page droite.
+				</div>
+
+				<div id="tab-style-lis">
+					La mise en forme des listes, numérotées ou pas.
+				</div>
+			</div>
+		</div>
+	</section>
+</section>
+
+<!--
+		TYPOGRAPHIE
+	-->
+<section data-background="#453E6E" id="sec-email">
+	<section>
+		<h3>Typographie</h3>
+		<p>Ou <em>orthotypographie</em>, l'ensemble des règles attachées à l'écriture d'une langue.</p>
+		<div class="block">
+			<p>Lors de la rédaction d'un document, il est attendu de votre part le respect (<em>outre celui de l'orthographe et de la grammaire</em>) des règles typographiques.</p>
+		</div>
+	</section>
+
+	<section>
+		<h4>Pour le français</h4>
+		<p>Les règles de base sont disponibles dans <a href="typographie.pdf">ce document</a>.</p>
+	</section>
+
+	<section>
+		<h4>Rédaction d'un email</h4>
+	</section>
+
+	<section>
+		<h4>Les différents éléments</h4>
+		<ul>
+			<li>Destinataire(s)</li>
+			<li>Objet</li>
+			<li>Corps du message</li>
+			<li>Éventuelles pièces jointes</li>
+		</ul>
+	</section>
+
+	<section>
+		<h4>Objet</h4>
+		<p>Texte court mais pertinent quant au contenu du message.</p>
+		<div class="block">
+			<p>Exemple : <em>TP C2i, L1 CSV E2, Séance 5</em>
+		</div>
+	</section>
+
+	<section>
+		<h4>Corps du message</h4>
+		<div style="background-color:rgba(0,0,0,0.25);">Formule d'appel (ex. <em>Bonjour,</em>)</div>
+		<div style="background-color:rgba(0,0,0,0.5);height:150px">
+			Contenu du message.<br/>
+			<em>Attention à l'orthographe et à la typographie.</em>
+		</div>
+		<div style="background-color:rgba(0,0,0,0.25);">Formule de politesse (ex. <em>Cordialement</em>)</div>
+		<div style="background-color:rgba(0,0,0,0.25);">Signature (<em>Prénom, Nom</em>)</div>
+</section>

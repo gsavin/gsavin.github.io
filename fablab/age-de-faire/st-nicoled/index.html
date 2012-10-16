@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>L'Âge de Faire | Saint-NicoLED</title>
+
+		<meta name="description" content="Atelier Saint-NicoLED">
+		<meta name="author" content="Guilhelm SAVIN">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="/reveal/css/reveal.css">
+		<link rel="stylesheet" href="../age_de_faire.css" id="theme">
+
+		<link rel="stylesheet" href="/reveal/css/svg-selectors.css">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="/reveal/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal/css/print/pdf.css' : '/reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-background="img/decor-affiche.svg" data-background-size="contain">
+					<div style="background-color:rgba(22,22,22,0.75);">
+						<h1>L'Âge de Faire</h1>
+						<h3>Saint-NicoLED : Atelier Arduino</h3>
+						<p>
+							<small>organisée par <a href="http://www.faironnerie-abc.xyz">la Faironnerie ABC</a> /
+								<a href="https://twitter.com/faironnerie_abc">@faironnerie_abc</a>
+							</small>
+						</p>
+						<p>Description plus détaillée de l'atelier <a href="http://litis.univ-lehavre.fr/~dolivier/PagePerso/pmwiki.php?n=Divers.Arduino">sur cette page</a>.</p>
+					</div>
+					<div style="text-align:left;">
+						<small><a href="http://gsav.in/fablab/age-de-faire/st-nicoled/">http://gsav.in/fablab/age-de-faire/st-nicoled/</a></small>
+					</div>
+				</section>
+
+				<section>
+					<h2>À LED</h2>
+				</section>
+
+				<section>
+					<h2>Matériel</h2>
+
+					<section data-svg-hl="img/arduino-board.svg">
+						<h4>Carte Arduino</h4>
+					</section>
+
+					<section data-svg-hl="img/breadboard.svg">
+						<h4>Breadboard</h4>
+					</section>
+				</section>
+
+				<section>
+					<h2>Env. de développement</h2>
+
+					<section>
+						<h4>Installation sous Linux</h4>
+
+						<pre>
+							<code>
+# ArchLinux
+% yaourt arduino
+
+# Ubuntu
+% sudo apt-get install arduino
+
+# Ajout de 'faironnier' au groupe 'uucp'
+% sudo usermod -a -G uucp faironnier
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<h4>À bon port</h4>
+						Pour vérifier que le bon port USB est utilisé, il suffit de brancher le arduino et d'utiliser la commande <code>dmesg</code> :
+						<pre>
+							<code data-trim>
+% dmesg | tail
+
+[65373.194664] usb 1-3.4: new full-speed USB device number 12 using xhci_hcd
+[65373.297140] ftdi_sio 1-3.4:1.0: FTDI USB Serial Device converter detected
+[65373.297170] usb 1-3.4: Detected FT232RL
+[65373.297498] usb 1-3.4: FTDI USB Serial Device converter now attached to ttyUSB0
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<img src="img/ArduinoConfigPortSerie.png" height="100%" width="auto"/>
+					</section>
+				</section>
+
+				<section>
+					<h2>Sketch</h2>
+
+					<section>
+						<ul>
+							<li>basé sur C/C++</li>
+							<li>code divisé en trois parties
+								<ol>
+									<li>déclaration des constantes et variables</li>
+									<li>code de configuration, appelé une fois,
+										<pre><code>void setup()</code></pre>
+									</li>
+									<li>code du programme, appelé en boucle,
+										<pre><code>void loop()</code></pre>
+									</li>
+								</ol>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<pre style="font-size:0.46em;">
+							<code>/*
+ * Ce programme fait clignoter la LED sur la broche 13
+ * et donc la LED de test de la carte
+ */
+
+//
+// La définition des constantes et des variables
+//
+const int ledBroche = 13; // LED connectée à la broche 13
+const int attente = 1000; // En ms
+
+//
+// Initialisations
+//
+// Initialisation des ressources de la carte.
+// Configuration des entrées/sorties.
+// Définition de la vitesse de fonctionnement du port série, etc.
+// La fonction setup() n'est exécutée qu'une seule fois.
+//
+void setup() {
+  pinMode(ledBroche, OUTPUT); // Configure ledBroche comme une sortie
+}
+
+//
+// Programmation des interactions et comportement.
+//
+// C'est une boucle "infinie". Elle peut être interrompue que par
+// coupure de l'alimentation de la carte ou un appui sur Reset
+//
+void loop() {
+  digitalWrite(ledBroche, HIGH); // Met la sortie à l'état haut, LED allumée
+  delay(attente);                // durant attente.
+  digitalWrite(ledBroche, LOW);  // Met la sortie à l'état bas, LED éteinte
+  delay(attente/3);              // durant attente/3 (division entière)
+}
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<h4>Syntaxe</h4>
+
+						<ul>
+							<li>Variables ?</li>
+							<li>Structures ?</li>
+							<li>Fonctions ?</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Électricité</h2>
+
+						<ul>
+							<li><span class="tag">U</span> tension, en volts (V)</li>
+							<li><span class="tag">I</span> intensité, en ampères (A)</li>
+							<li><span class="tag">P</span> puissance, en Watts (W)</li>
+							<li><span class="tag">R</span> résistance, en ohms (Ω)</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Relations</h2>
+
+						<p><code>U = R . I</code></p>
+						<p><code>P = U . I</code></p>
+					</section>
+
+					<section>
+						<h2>Alimentation</h2>
+
+						<p>Caractérisée par :</p>
+						<ul>
+							<li>Tension en sortie</li>
+							<li>Intensité maximale en sortie</li>
+							<li>(Tension d'entrée)</li>
+						</ul>
+						<p>Exemple : alimentation de téléphone, courant sortant de 5V pour au max 1A.</p>
+					</section>
+
+					<section>
+						<h2>Arduino Uno</h2>
+
+						<img src="img/arduino-board-alim.svg" height="100%" width="auto"/>
+					</section>
+
+					<section>
+						<h2>LEDs</h2>
+
+						<!--<img src="img/led.svg" class="stretch" style="float:left;margin-right:20px;"/>-->
+						<ul style="background:url('img/led.svg') no-repeat;background-position:left;background-size:contain;height:100%;padding-left:150px;padding-bottom:100px;">
+							<li>Courant <small><span class="tag">6 à 20mA</span></small></li>
+							<li>Tension de seuil
+								<small><span class="tag">1.6 à 2.0V</span>
+								<span class="tag jaune">2.2V</span>
+								<span class="tag vert">2.2 à 2.5V</span>
+								<span class="tag bleu">2.5 à 2.8V</span>
+								<span class="tag blanc">3.5V</span></small>
+							</li>
+							<li>Attention au sens !</li>
+						</ul>
+						<p>
+							<a href="http://www.zigobot.ch/fr/fiches-pratiques/41-en-savoir-plus/91-jouer-avec-des-leds.html">Plus d'infos sur les LEDs</a>
+						</p>
+					</section>
+
+					<section>
+						<h2>Résistances</h2>
+						<div class="stretch" data-svg-hl="img/resistance.svg"></div>
+					</section>
+				</section>
+
+				<section>
+					<h3>LED qui clignote</h3>
+					<ul>
+						<li>1 LED</li>
+						<li>1 résistance de 330Ω (orange-orange-brun)</li>
+						<li>3 câbles</li>
+					</ul>
+					<img class="stretch" src="img/LedClignotante_bb.svg"/>
+				</section>
+
+				<section data-background="img/arduino-board-ni.svg" data-background-size="contain" data-background-position="right">
+					<h3>Faire pulser la LED</h3>
+
+					<ul>
+						<li>Utiliser un pin PWM (~)</li>
+					</ul>
+
+					<pre>
+						<code>/*
+ * Ce programme fait pulser la LED sur la broche 3
+ */
+
+//
+// La définition des constantes et des variables
+//
+const int ledBroche = 3;           // LED connectée à la broche 3
+const unsigned int attente = 1000; // En ms
+
+//
+// Initialisation(s)
+//
+void setup() {
+  // Configure ledBroche comme une sortie
+  pinMode(ledBroche, OUTPUT);
+}
+
+//
+// Programmation des interactions et comportement.
+//
+void loop() {
+ const float delta = 0.001;
+ float entree, sortie;
+
+ for (entree = 0; entree < 2 * PI; entree = entree + delta) {
+    // La valeur doit être comprise entre 0 et 255
+    sortie = sin(entree) * 127.5 + 127.5;
+    analogWrite(ledBroche,sortie);
+    delay(3);
+  }
+
+  delay(attente);
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>En guirlande</h3>
+
+					<pre>
+						<code>// Durée entre les flashs
+#define FLASH_DELAY 2000
+// Durée du flash
+#define FLASH_LENGTH 1000
+// Il faut 255ms pour allumer la led,
+// le flash s'éteint après 255 + FLASH_LENGTH ms.
+#define STOP_FLASH_AT 255 + FLASH_LENGTH
+// Il faut aussi 255ms pour éteindre la led,
+// la pause commence donc à STOP_FLASH_AT + 255 ms.
+#define PAUSE_AT STOP_FLASH_AT + 255
+
+// Tableau des pins utilisés (tous les PWM ~).
+int pins[] = {3,5,6,9,10,11};
+
+// Étape de chaque led.
+int steps[6];
+
+void setup() {
+	// Initialisation
+  randomSeed(analogRead(0));
+
+  for(uint8_t i = 0; i < 6; i++) {
+    pinMode(pins[i], OUTPUT);
+    steps[i] = random(0, 255 * 2 + FLASH_LENGTH + FLASH_DELAY);
+  }
+}
+
+void loop() {
+  for(uint8_t i = 0; i < 6; i++) {
+    int s = steps[i]++;
+
+    if (s < 256) {
+      analogWrite(pins[i], s);
+    }
+    else if(s >= STOP_FLASH_AT && s < PAUSE_AT) {
+      analogWrite(pins[i], 255 - s + STOP_FLASH_AT);
+    }
+    else if(s > PAUSE_AT + FLASH_DELAY) {
+      steps[i] = 0;
+    }
+  }
+
+  delay(1);
+}
+						</code>
+					</pre>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="/js/d3.v3.min.js"></script>
+		<script src="/reveal/lib/js/head.min.js"></script>
+		<script src="/reveal/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/reveal/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '/reveal/plugin/zoom-js/zoom.js', async: true },
+					{ src: '/reveal/plugin/notes/notes.js', async: true }
+				]
+			});
+
+			d3.selectAll('[data-svg-hl]').each(function() {
+				var self = this;
+
+				d3.xml(d3.select(this).attr('data-svg-hl'), "image/svg+xml", function(error, doc) {
+					self.appendChild(doc.documentElement);
+
+					var svg = d3.select(self).select('svg');
+					var selectors = svg.selectAll('.highlighter');
+
+					selectors.on('mouseover', function() {
+						var that = d3.select(this);
+						var target = svg.select(that.attr('data-target'));
+
+						target.classed({'hover':true});
+						svg.selectAll('.hideonhl').classed({'hidden':true});
+					});
+
+					selectors.on('mouseout', function() {
+						var that = d3.select(this);
+						var target = svg.select(that.attr('data-target'));
+
+						target.classed({'hover':false});
+						svg.selectAll('.hideonhl').classed({'hidden':false});
+					});
+				});
+			});
+
+		</script>
+
+	</body>
+</html>
