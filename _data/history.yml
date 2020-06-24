@@ -28,7 +28,7 @@
   start: jan. 2014
   end: jan. 2015
   location: Asia, Oceania, North &amp; South America
-  description: "A world tour I have done with my wife. We made several jobs during this year : working on an eco-project in Nepal, teaching english in Cambodgia, working on a café and on a ranch in Australia. You can find more informations about our trip on our <a href='http://nomadogeeks.com'>nomadoGEEKS blog</a>."
+  description: "A world tour I have done with my wife. We made several jobs during this year : working on an eco-project in Nepal, teaching english in Cambodgia, working on a café and on a ranch in Australia. You can find more information about our trip on our <a href='http://nomadogeeks.com'>nomadoGEEKS blog</a>."
   icon: globe
 
 - title: Software Engineer
@@ -41,7 +41,7 @@
   start: sep. 2008
   end: dec. 2013
   location: LITIS, University of Le Havre, France
-  description: This is my PhD thesis about <em>Swarm Intelligence for Simulation Distribution in a Computational Ecosystem</em>. More informations about it can be found on <a href="/research/#phd">the dedicated section</a>.
+  description: This is my PhD thesis about <em>Swarm Intelligence for Simulation Distribution in a Computational Ecosystem</em>. More information about it can be found on <a href="/research/#phd">the dedicated section</a>.
   icon: graduation-cap
 
 - title: Master 2 <em>Algorithmic &amp; Formal Methods</em>
