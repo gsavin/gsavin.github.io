@@ -1,3 +1,24 @@
+- title: Tech Lead, Software Engineer
+  start: may. 2019
+  end: now
+  location: Viveris Technologies, Toulouse, France
+  description: |
+    Still working on the same network box product but as tech lead of my team.
+    <br />
+    Another part of this role is to ensure that quality code is produced, and best pratices are followed.
+    Another one is to participate to create the technical design of future features.
+  icon: code
+
+- title: Software Engineer
+  start: apr. 2018
+  end: may. 2019
+  location: Viveris Technologies, Toulouse, France
+  description: |
+    Working as part of a 5 developpers agile team on a network box for ship, allowing to manage satellite connectivity on board and relying on various technologies such taht Java (with Spring/Hibernate), Python, Angular...
+    <br />
+    We had to maintain the current product, and to work on new features for the next release.
+  icon: code
+
 - title: Fullstack Engineer
   start: may. 2017
   end: dec. 2017
@@ -78,7 +99,7 @@
   location: University of Le Havre, France
   description: The three first years at the University. First steps into the research world.
   icon: graduation-cap
-  
+
 - title: Econocom Managed Services
   start: jul. 2003
   end: sep. 2003
